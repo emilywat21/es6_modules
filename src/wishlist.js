@@ -1,9 +1,11 @@
 
-import {Car} from './car.js';
+import Car from "./car";
 
-export class Wishlist {
-    list = [];
-    nextId = 0;
+class Wishlist {
+    constructor() {
+    this.list = [];
+    this.nextId = 0;
+    }
 
     add(make, model, year) {
         let myCar = new Car(++this.nextId, make, model, year);
@@ -14,3 +16,4 @@ remove(carId) {
     this.list = this.list.filter((myCar) => myCar.id != carId);
 }
 }
+export default Wishlist;
